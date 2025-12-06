@@ -1,0 +1,5 @@
+git status
+
+git add .
+git commit -m "Updated header background color to cyan"
+git push origin master
