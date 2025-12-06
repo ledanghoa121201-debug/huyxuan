@@ -368,3 +368,55 @@ Thêm đoạn CSS sau vào **cuối** tệp `style.css` của bạn:
 .cta-button-small:hover {
     background-color: #e67e22;
 }
+/* -------------------- STYLES CHO ACCORDION DỊCH VỤ -------------------- */
+
+.accordion-header {
+    /* Đặt kiểu cho nút header */
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    cursor: pointer;
+    font-size: 1em;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.accordion-header:hover {
+    background-color: #f8f8f8;
+}
+
+.accordion-header h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.2em;
+}
+
+/* Ẩn nội dung mặc định và thiết lập hiệu ứng chuyển động */
+.accordion-content {
+    max-height: 0; /* Ẩn nội dung */
+    overflow: hidden; /* Cắt nội dung bị tràn */
+    transition: max-height 0.3s ease-out; /* Hiệu ứng mượt mà khi mở/đóng */
+    padding: 0 15px;
+}
+
+/* Lớp CSS sẽ được thêm bằng JavaScript khi nội dung mở */
+.accordion-content.active {
+    max-height: 500px; /* Giá trị đủ lớn để hiển thị nội dung */
+    padding: 15px; /* Thêm padding khi mở */
+    border-top: 1px solid #eee;
+}
+
+/* Hiệu ứng xoay mũi tên */
+.toggle-icon {
+    margin-top: 10px;
+    font-size: 0.8em;
+    transition: transform 0.3s ease-out;
+}
+
+.toggle-icon.rotate {
+    transform: rotate(180deg);
+}
