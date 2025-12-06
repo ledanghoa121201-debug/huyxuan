@@ -247,3 +247,53 @@ body {
         font-size: 0.9em;
     }
 }
+
+### 🎨 Cập nhật `style.css` (CSS cho Grid Layout)
+
+Thêm đoạn CSS sau vào **cuối** tệp `style.css` của bạn:
+
+```css
+/* -------------------- DỊCH VỤ (GRID LAYOUT) -------------------- */
+.services {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #e6e6fa; /* Màu nền nhẹ nhàng cho phần dịch vụ */
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+.services h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.service-container {
+    display: grid; 
+    /* Tạo bố cục 3 cột. Nếu màn hình hẹp, tự động điều chỉnh */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; /* Khoảng cách giữa các thẻ */
+}
+
+.service-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Hiệu ứng nâng nhẹ khi di chuột */
+}
+
+.service-card i {
+    color: #00bcd4; /* Màu xanh nổi bật cho icon */
+    margin-bottom: 15px;
+}
+
+/* -------------------- RESPONSIVE cho Grid -------------------- */
+@media (max-width: 600px) {
+    .service-container {
+        grid-template-columns: 1fr; /* Chỉ hiển thị 1 cột trên điện thoại */
+    }
+}
