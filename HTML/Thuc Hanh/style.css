@@ -1,0 +1,249 @@
+/* Thiết lập cơ bản (Reset/Box-sizing) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Chọn font chữ */
+}
+
+body {
+    background-color: #f4f4f9; /* Màu nền nhẹ cho toàn trang */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* -------------------- HEADER -------------------- */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 1em 2em;
+    display: flex; /* Bố cục linh hoạt */
+    justify-content: space-between; /* Đẩy các phần tử ra hai bên */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.header h1 {
+    font-size: 1.5em;
+}
+
+.header nav ul {
+    list-style: none; /* Bỏ dấu chấm của list */
+}
+
+.header nav ul li {
+    display: inline; /* Hiển thị các mục menu trên cùng một hàng */
+    margin-left: 20px;
+}
+
+.header nav ul li a {
+    color: white;
+    text-decoration: none; /* Bỏ gạch chân */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header nav ul li a:hover {
+    color: #00bcd4; /* Đổi màu khi di chuột vào */
+}
+
+/* -------------------- MAIN CONTENT (Hero Section) -------------------- */
+.main-content {
+    padding: 40px 20px;
+    max-width: 1200px; /* Chiều rộng tối đa của nội dung */
+    margin: auto; /* Căn giữa nội dung */
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 2em;
+}
+
+.hero p {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.cta-button {
+    background-color: #00bcd4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #008c9e;
+}
+
+/* -------------------- FOOTER -------------------- */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed; /* Giữ footer ở cuối trang */
+    bottom: 0;
+    width: 100%;
+}
+
+/* -------------------- HÌNH ẢNH -------------------- */
+.image-gallery {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.image-gallery h3 {
+    margin-bottom: 20px;
+    color: #00bcd4;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px; /* Khoảng cách giữa các ảnh */
+}
+
+.image-container img {
+    width: 30%; /* Mỗi ảnh chiếm khoảng 30% chiều rộng */
+    max-width: 350px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover; /* Đảm bảo hình ảnh được căn chỉnh đẹp */
+    transition: transform 0.3s;
+}
+
+.image-container img:hover {
+    transform: scale(1.05); /* Phóng to nhẹ khi di chuột */
+}
+
+/* -------------------- FORM LIÊN HỆ -------------------- */
+.contact-form-section {
+    padding: 40px 20px;
+    background-color: #f0f8ff; /* Màu nền nhẹ nhàng cho phần form */
+    margin: 20px auto 80px auto; /* Thêm margin dưới để không bị footer che */
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-form-section h2 {
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.contact-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; /* Đưa label lên một dòng riêng */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #00bcd4;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    resize: vertical; /* Cho phép thay đổi kích thước theo chiều dọc */
+}
+
+.contact-form .cta-button {
+    width: 100%; /* Làm cho nút gửi chiếm toàn bộ chiều rộng form */
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    /* -------------------- HEADER -------------------- */
+    .header {
+        flex-direction: column; /* Chuyển bố cục từ ngang sang dọc */
+        text-align: center;
+        padding: 1em;
+    }
+
+    .header nav ul {
+        margin-top: 10px;
+        padding: 0;
+    }
+
+    .header nav ul li {
+        display: block; /* Mỗi mục menu chiếm một dòng */
+        margin: 5px 0;
+    }
+
+    /* -------------------- HÌNH ẢNH -------------------- */
+    .image-container {
+        flex-direction: column; /* Ảnh xếp chồng lên nhau thay vì xếp ngang */
+        align-items: center;
+    }
+
+    .image-container img {
+        width: 80%; /* Chiều rộng ảnh lớn hơn trên di động */
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* -------------------- THIẾT LẬP CHUNG -------------------- */
+    body {
+        font-size: 14px; /* Giảm cỡ chữ cơ bản */
+    }
+
+    .main-content,
+    .image-gallery,
+    .contact-form-section {
+        padding: 20px 10px; /* Giảm padding hai bên */
+    }
+
+    /* -------------------- HERO SECTION -------------------- */
+    .hero h2 {
+        font-size: 1.5em; /* Giảm kích thước tiêu đề chính */
+    }
+    
+    .hero p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 12px 15px;
+        font-size: 0.9em;
+    }
+
+    /* -------------------- FORM LIÊN HỆ -------------------- */
+    .contact-form-section {
+        margin: 20px auto 60px auto; /* Đảm bảo footer không bị che */
+    }
+
+    /* -------------------- FOOTER -------------------- */
+    .footer {
+        padding: 0.8em 0;
+        font-size: 0.9em;
+    }
+}

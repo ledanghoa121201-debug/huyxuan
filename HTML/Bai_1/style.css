@@ -1,0 +1,62 @@
+.ten-cap-doi {
+    display: flex; /* Bật Flexbox */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: start; /* Căn giữa theo chiều ngang (tùy chọn) */
+    margin-bottom: 10px; /* Thêm khoảng cách với ảnh */
+}
+
+/* Chỉnh sửa 3 tiêu đề h1 để chúng không chiếm hết 1 dòng */
+.ten-cap-doi h1 {
+    margin: 0 5px; /* Giảm margin mặc định của h1 và thêm khoảng cách giữa các tên */
+    white-space: nowrap; /* Đảm bảo nội dung không bị xuống dòng */
+}
+/* của mình */
+
+.first-class {
+    color: brown;
+    /* border: 1px solid red; */
+    font-size: 20px;
+}
+
+#Secoundid {
+    color: red;
+    font-size: 20px;
+    /* text-transform: uppercase; */
+    /* text-decoration: underline; */
+}
+
+#thirdid {
+    color: brown;
+    font-size: 20px;
+}
+
+.image {
+    display: block;
+    height: 300;
+    max-width: 100%;
+}
+
+/* Thêm CSS cho nút để nó nằm dưới ảnh và được căn giữa */
+.nut-moi {
+    /* Style cơ bản của nút */
+    display: inline-block; 
+    padding: 10px 20px;
+    background-color: black;
+    color: red;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    /* Đảm bảo nút xuống dưới ảnh và có khoảng cách */
+    margin-top: 15px; 
+}
+
+/* Tùy chọn: Căn giữa toàn bộ bài đăng (tên, ảnh, nút) */
+/* .bai-dang-chinh {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content; /* Giữ kích thước vừa với nội dung */
+  /*  margin: 20px auto; /* Căn giữa container ra giữa màn hình */
+}
