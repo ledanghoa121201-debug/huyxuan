@@ -13,37 +13,50 @@ body {
 }
 
 /* -------------------- HEADER -------------------- */
+/* -------------------- STYLES CHO HEADER VÀ NAVIGATION -------------------- */
+
 .header {
-    background-color: #333;
-    color: white;
-    padding: 1em 2em;
-    display: flex; /* Bố cục linh hoạt */
-    justify-content: space-between; /* Đẩy các phần tử ra hai bên */
+    background-color: #333; /* Màu nền header */
+    color: white; /* Màu chữ chung */
+    padding: 15px 20px;
+    display: flex; /* Bật Flexbox trên Header */
+    justify-content: space-between; /* Đẩy h1 và nav ra hai bên */
     align-items: center; /* Căn giữa theo chiều dọc */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .header h1 {
+    margin: 0; /* Loại bỏ margin mặc định của h1 */
     font-size: 1.5em;
 }
 
-.header nav ul {
-    list-style: none; /* Bỏ dấu chấm của list */
+nav ul {
+    list-style: none; /* Xóa dấu chấm đầu dòng */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Bật Flexbox trên danh sách <ul> */
 }
 
-.header nav ul li {
-    display: inline; /* Hiển thị các mục menu trên cùng một hàng */
-    margin-left: 20px;
+nav ul li {
+    margin-left: 20px; /* Khoảng cách giữa các mục li */
 }
 
-.header nav ul li a {
+nav ul li a {
     color: white;
-    text-decoration: none; /* Bỏ gạch chân */
+    text-decoration: none; /* Xóa gạch chân */
     font-weight: bold;
+    display: block;
+    padding: 5px 10px;
     transition: color 0.3s;
 }
 
-.header nav ul li a:hover {
-    color: #00bcd4; /* Đổi màu khi di chuột vào */
+nav ul li a:hover {
+    color: #00bcd4; /* Đổi màu khi di chuột */
+}
+
+/* Kiểu cho icon trong menu */
+nav ul li a i {
+    margin-right: 5px;
 }
 
 /* -------------------- MAIN CONTENT (Hero Section) -------------------- */
