@@ -179,6 +179,7 @@ nav ul li a i {
 
 .form-group input[type="text"],
 .form-group input[type="email"],
+.form-group input[type="Điện thoại"],
 .form-group textarea {
     width: 100%;
     padding: 10px;
@@ -435,4 +436,13 @@ Thêm đoạn CSS sau vào **cuối** tệp `style.css` của bạn:
 
 .toggle-icon.rotate {
     transform: rotate(180deg);
+}
+@media (max-width: 600px) {
+    /* Áp dụng cho Container của Grid/Flexbox */
+    .service-container {
+        grid-template-columns: 1fr; /* Chỉ hiển thị 1 cột */
+    }
+}
+@media (max-width: 480px) {
+    /* Đặt các quy tắc CSS để sửa lỗi TẠI ĐÂY */
 }
