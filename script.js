@@ -64,3 +64,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ... Giữ lại code CTA Button và Accordion cũ của bạn ở đây ...
+
+    // --- CODE MỚI CHO THÔNG BÁO XÁC NHẬN FORM ---
+    const form = document.getElementById('contact-form');
+    const statusMessage = document.getElementById('form-status-message');
+    
+    if (form) {
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault(); // CHẶN chuyển hướng mặc định của form
+
+            const formButton = form.querySelector('.cta-button');
+            const formURL = form.action;
+            const data = new FormData(form);
+
+            formButton.textContent = 'Đang gửi...';
+            formButton.disabled = true;
+
+            try {
+                const response = await fetch(formURL, {
+                    method: 'POST',
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Gửi thành công
+                    form.reset(); // Xóa nội dung form
+                    form.style.display = 'none'; // Ẩn form
+                    statusMessage.style.display = 'block'; // Hiển thị thông báo thành công
+                } else {
+                    // Xử lý lỗi (ví dụ: lỗi validate từ Formspree)
+                    statusMessage.textContent = 'Rất tiếc! Đã xảy ra lỗi khi gửi. Vui lòng thử lại sau.';
+                    statusMessage.style.backgroundColor = '#f8d7da';
+                    statusMessage.style.color = '#721c24';
+                    statusMessage.style.display = 'block';
+                }
+            } catch (error) {
+                // Xử lý lỗi kết nối
+                statusMessage.textContent = 'Lỗi kết nối mạng. Vui lòng kiểm tra lại đường truyền.';
+                statusMessage.style.backgroundColor = '#f8d7da';
+                statusMessage.style.color = '#721c24';
+                statusMessage.style.display = 'block';
+            } finally {
+                // Đảm bảo nút Gửi được bật lại nếu có lỗi
+                formButton.textContent = 'Gửi Thông Tin';
+                formButton.disabled = false;
+            }
+        });
+    }
+});

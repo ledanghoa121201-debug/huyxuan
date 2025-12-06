@@ -182,10 +182,13 @@ nav ul li a i {
 .form-group textarea {
     width: 100%;
     padding: 10px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1em;
     resize: vertical; /* Cho phép thay đổi kích thước theo chiều dọc */
+    box-sizing: border-box; /* Rất quan trọng để padding không làm tăng chiều rộng tổng thể */
+}
 }
 
 .contact-form .cta-button {
