@@ -297,3 +297,74 @@ Thêm đoạn CSS sau vào **cuối** tệp `style.css` của bạn:
         grid-template-columns: 1fr; /* Chỉ hiển thị 1 cột trên điện thoại */
     }
 }
+
+/* -------------------- TỐI ƯU CĂN CHỈNH VÀ KHOẢNG CÁCH -------------------- */
+
+/* Căn giữa Nội dung Toàn trang (Áp dụng cho các sections chính) */
+.hero,
+.services,
+.image-gallery,
+.contact-form-section {
+    /* Đảm bảo nội dung không dính sát các cạnh trình duyệt */
+    max-width: 1200px; /* Chiều rộng tối đa của các khối nội dung */
+    margin-left: auto; /* Căn giữa */
+    margin-right: auto; /* Căn giữa */
+}
+
+/* Tăng khoảng cách đệm (Padding) trên/dưới cho các sections */
+.services,
+.image-gallery,
+.contact-form-section {
+    padding-top: 60px; /* Tăng padding trên */
+    padding-bottom: 60px; /* Tăng padding dưới */
+}
+
+/* Điều chỉnh lại padding cho màn hình nhỏ */
+@media (max-width: 768px) {
+    .services,
+    .image-gallery,
+    .contact-form-section {
+        padding-top: 30px; 
+        padding-bottom: 30px; 
+    }
+}
+/* -------------------- MỤC CON (SUB-SERVICES) -------------------- */
+.sub-services {
+    list-style-type: none; /* Xóa dấu chấm đầu dòng mặc định */
+    padding: 0;
+    margin: 15px 0 20px 0; /* Khoảng cách trên/dưới */
+    text-align: left; /* Căn lề trái cho danh sách */
+}
+
+.sub-services li {
+    padding: 5px 0;
+    font-size: 0.95em;
+    color: #555;
+    border-bottom: 1px dashed #eee; /* Đường gạch chân mờ */
+    transition: color 0.3s;
+}
+
+.sub-services li:last-child {
+    border-bottom: none; /* Xóa gạch chân ở mục cuối */
+}
+
+.sub-services li:hover {
+    color: #00bcd4; /* Đổi màu khi di chuột */
+}
+
+/* Kiểu cho nút nhỏ (Đặt Lịch Ngay) */
+.cta-button-small {
+    display: inline-block;
+    background-color: #f39c12; /* Màu cam nổi bật */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button-small:hover {
+    background-color: #e67e22;
+}
